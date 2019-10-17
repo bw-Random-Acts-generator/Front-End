@@ -2,8 +2,16 @@ import React, { useState, useEffect } from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const SignUp = (props) => {
+    const [users, setUsers] = useState([]);
+
+    useEffect(() => {
+        if(props.status) {
+            setUsers([...users, props.status])
+        }
+    }, [props.status])
     return (
         <div className="sign-up-form">
             <Form>
@@ -12,7 +20,7 @@ const SignUp = (props) => {
                 <Field type="text" name="email" placeholder="Email" />
                 <Field type="text" name="password" placeholder="********" />
                 <Field type="text" name="confirm" placeholder="********" />
-                <p>Already have an account? Log in now!</p>
+                <p>Already have an account? <Link to= {`/login`} >Log in now!</Link></p>
                 <button type="submit">Sign Up</button>
             </Form>
         </div>
