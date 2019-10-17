@@ -26,6 +26,7 @@ const myMapProps = props => {
         last: props.last || '',
         email: props.email || '',
         password: props.password || '',
+        confirm: props.confirm || ''
     }
     return newObj;
 };
@@ -43,10 +44,11 @@ const mySubmit = (values, { setStatus }) => {
 };
 
 const yupSchema = Yup.object().shape({
-    name: Yup.string().required("Name is required"),
+    first: Yup.string().required("Name is required"),
+    last: Yup.string().required("Name is required"),
     email: Yup.string().email("Please enter a valid email").required("Email is required"),
     password: Yup.string().min(8, 'Password must be 8 characters or longer').required('Password is required'),
-    terms: Yup.boolean().required('Must check TOS'),
+    confirm: Yup.string().min(8, 'Password must be 8 characters or longer').required('Password is required'),
 });
 
 const formikObj = {
