@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
+import axios from 'axios';
 
 const SignUp = (props) => {
     return (
@@ -18,6 +19,35 @@ const SignUp = (props) => {
     )
 }
 
+const myMapProps = props => {
+    console.log(props);
+    const newObj = {
+        first: props.first || '',
+        last: props.last || '',
+        email: props.email || '',
+        password: props.password || '',
+    }
+    return newObj;
+};
+
+
+
+const mySubmit = (values, { setStatus }) => {
+    axios
+        .post("https://reqres.in/api/users", values)
+        .then(res => {
+            console.log(res);
+            setStatus(res.data);
+        })
+        .catch(err => console.log(err));
+};
+
+const yupSchema = Yup.object().shape({
+    name: Yup.string().required("Name is required"),
+    email: Yup.string().email("Please enter a valid email").required("Email is required"),
+    password: Yup.string().min(8, 'Password must be 8 characters or longer').required('Password is required'),
+    terms: Yup.boolean().required('Must check TOS'),
+});
 
 const formikObj = {
     mapPropsToValues: myMapProps,
@@ -25,8 +55,7 @@ const formikObj = {
     validationSchema: yupSchema
 };
 
-
-const NewSignUp = withForMik(formikObj);
+const NewSignUp = withFormik(formikObj);
 
 const NewSignUpForm = NewSignUp(SignUp);
 

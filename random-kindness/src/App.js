@@ -5,7 +5,7 @@ import SignUp from './Components/Login/SignUp.js'
 function App() {
   return (
     <div className="App">
-      <Route path="/" component={SignUp} />
+      <Route path="/signup" component={SignUp} />
     </div>
   );
 }
