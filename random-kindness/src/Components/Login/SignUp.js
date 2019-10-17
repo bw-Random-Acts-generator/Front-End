@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { withFormik, Form, Field } from 'formik';
+import * as Yup from 'yup';
 
 const SignUp = (props) => {
     return (
@@ -17,4 +18,16 @@ const SignUp = (props) => {
     )
 }
 
-export default SignUp;
+
+const formikObj = {
+    mapPropsToValues: myMapProps,
+    handleSubmit: mySubmit,
+    validationSchema: yupSchema
+};
+
+
+const NewSignUp = withForMik(formikObj);
+
+const NewSignUpForm = NewSignUp(SignUp);
+
+export default NewSignUpForm;
