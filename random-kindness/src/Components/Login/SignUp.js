@@ -3,7 +3,8 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import { Auth } from "aws-amplify";
+
+
 
 const SignUp = (props) => {
     const [users, setUsers] = useState([]);
@@ -17,10 +18,25 @@ const SignUp = (props) => {
         <div className="sign-up-form">
             <Form>
                 <Field type="text" name="first" placeholder="FIRST NAME" />
+                {props.touched.first && props.errors.first && 
+                    <p className='error'>{props.errors.first}</p>
+                }
                 <Field type="text" name="last" placeholder="LAST NAME" />
+                {props.touched.last && props.errors.last && 
+                    <p className='error'>{props.errors.last}</p>
+                }
                 <Field type="text" name="email" placeholder="EMAIL" />
+                {props.touched.email && props.errors.email && 
+                    <p className='error'>{props.errors.email}</p>
+                }
                 <Field type="text" name="password" placeholder="PASSWORD" />
+                {props.touched.password && props.errors.password && 
+                    <p className='error'>{props.errors.password}</p>
+                }
                 <Field type="text" name="confirm" placeholder="CONFIRM PASSWORD" />
+                {props.touched.confirm && props.errors.confirm && 
+                    <p className='error'>{props.errors.confirm}</p>
+                }
                 <p>Already have an account? <Link to= {`/login`} >Log in now!</Link></p>
                 <button type="submit">Sign Up</button>
             </Form>
@@ -42,12 +58,14 @@ const myMapProps = props => {
 
 
 
-const mySubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-        const newUser = await.
-    }
+const mySubmit = (values, { setStatus }) => {
+    axios
+        .post(`https://random-acts0519.herokuapp.com/api/register`, values)
+        .then(res => {
+            console.log(res);
+            setStatus(res.data);
+        })
+        .catch(err => console.log(err));
 };
 
 const yupSchema = Yup.object().shape({

@@ -1,11 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from './axiosWithAuth.js';
+import axios from 'axios';
 
 const LogIn = (props) => {
 
-axiosWithAuth().get('endpoint/path/here').then(data => {
-    console.log(data);
-})
+useEffect(() => {
+    axios
+        .get('https://random-acts0519.herokuapp.com/')
+        .then(res => {
+            console.log(res);
+        })
+        .catch(err => console.log(err));
+}, []);
 return (
  <form  className="log-in">
     <h2>Welcome back!</h2>
