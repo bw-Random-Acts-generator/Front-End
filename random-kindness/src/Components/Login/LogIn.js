@@ -1,8 +1,11 @@
 import React, { useState, useEffect } from 'react';
-
+import { axiosWithAuth } from './axiosWithAuth.js';
 
 const LogIn = (props) => {
 
+axiosWithAuth().get('endpoint/path/here').then(data => {
+    console.log(data);
+})
 return (
  <form  className="log-in">
     <h2>Welcome back!</h2>

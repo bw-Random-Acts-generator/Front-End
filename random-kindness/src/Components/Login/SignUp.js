@@ -3,6 +3,7 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { Auth } from "aws-amplify";
 
 const SignUp = (props) => {
     const [users, setUsers] = useState([]);
@@ -15,11 +16,11 @@ const SignUp = (props) => {
     return (
         <div className="sign-up-form">
             <Form>
-                <Field type="text" name="first" placeholder="First Name" />
-                <Field type="text" name="last" placeholder="Last Name" />
-                <Field type="text" name="email" placeholder="Email" />
-                <Field type="text" name="password" placeholder="********" />
-                <Field type="text" name="confirm" placeholder="********" />
+                <Field type="text" name="first" placeholder="FIRST NAME" />
+                <Field type="text" name="last" placeholder="LAST NAME" />
+                <Field type="text" name="email" placeholder="EMAIL" />
+                <Field type="text" name="password" placeholder="PASSWORD" />
+                <Field type="text" name="confirm" placeholder="CONFIRM PASSWORD" />
                 <p>Already have an account? <Link to= {`/login`} >Log in now!</Link></p>
                 <button type="submit">Sign Up</button>
             </Form>
@@ -41,14 +42,12 @@ const myMapProps = props => {
 
 
 
-const mySubmit = (values, { setStatus }) => {
-    axios
-        .post("https://reqres.in/api/users", values)
-        .then(res => {
-            console.log(res);
-            setStatus(res.data);
-        })
-        .catch(err => console.log(err));
+const mySubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+        const newUser = await.
+    }
 };
 
 const yupSchema = Yup.object().shape({
@@ -56,7 +55,8 @@ const yupSchema = Yup.object().shape({
     last: Yup.string().required("Name is required"),
     email: Yup.string().email("Please enter a valid email").required("Email is required"),
     password: Yup.string().min(8, 'Password must be 8 characters or longer').required('Password is required'),
-    confirm: Yup.string().min(8, 'Password must be 8 characters or longer').required('Password is required'),
+    confirm: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match'),
+    
 });
 
 const formikObj = {
