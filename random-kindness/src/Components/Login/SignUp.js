@@ -8,12 +8,14 @@ import { Link } from 'react-router-dom';
 
 const SignUp = (props) => {
     const [users, setUsers] = useState([]);
-
+    
     useEffect(() => {
         if(props.status) {
             setUsers([...users, props.status])
         }
     }, [props.status])
+    // console.log(props.touched);
+    // console.log(props.errors);
     return (
         <div className="sign-up-form">
             <Form>
@@ -25,9 +27,9 @@ const SignUp = (props) => {
                 {props.touched.last && props.errors.last && 
                     <p className='error'>{props.errors.last}</p>
                 }
-                <Field type="text" name="email" placeholder="EMAIL" />
-                {props.touched.email && props.errors.email && 
-                    <p className='error'>{props.errors.email}</p>
+                <Field type="text" name="username" placeholder="EMAIL" />
+                {props.touched.username && props.errors.username && 
+                    <p className='error'>{props.errors.username}</p>
                 }
                 <Field type="text" name="password" placeholder="PASSWORD" />
                 {props.touched.password && props.errors.password && 
@@ -49,7 +51,7 @@ const myMapProps = props => {
     const newObj = {
         first: props.first || '',
         last: props.last || '',
-        email: props.email || '',
+        username: props.username || '',
         password: props.password || '',
         confirm: props.confirm || ''
     }
@@ -59,6 +61,7 @@ const myMapProps = props => {
 
 
 const mySubmit = (values, { setStatus }) => {
+    console.log(values);
     axios
         .post(`https://random-acts0519.herokuapp.com/api/register`, values)
         .then(res => {
