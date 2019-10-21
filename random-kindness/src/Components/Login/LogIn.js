@@ -21,6 +21,7 @@ const handleChange = e => {
     })
 }
 return (
+ <div>
  <form  className="log-in" onSubmit={newLogin}>
     <h2>Welcome back!</h2>
     <h2>Sign into your acount</h2>
@@ -49,6 +50,7 @@ return (
       <div>
     </div>
  </form>
+ </div>
 )
 
 }

@@ -8,7 +8,32 @@ import { Link } from 'react-router-dom';
 
 const SignUp = (props) => {
     const [users, setUsers] = useState([]);
-    
+    const containerStyle= {
+        backgroundColor: '#F2CFC9',
+        display: 'flex',
+        border: '1px solid black',
+        width: '100%',
+        height: '45rem'
+    }
+    const testimonialStyle = {
+        width: '50%'
+    }
+    const formStyle = {
+        backgroundColor: 'white',
+        border: '1px solid #918C89',
+        display: 'flex',
+        flexDirection: 'column',
+        width: '200%',
+        height: '40rem'
+    }
+
+    const fieldStyle = {
+        color: '#918C89',
+        width: '90%',
+        marginLeft: '3%',
+        marginBottom: '3%',
+        padding: '1.5%'
+    }
     useEffect(() => {
         if(props.status) {
             setUsers([...users, props.status])
@@ -17,31 +42,38 @@ const SignUp = (props) => {
     // console.log(props.touched);
     // console.log(props.errors);
     return (
-        <div className="sign-up-form">
-            <Form>
-                <Field type="text" name="first" placeholder="FIRST NAME" />
-                {props.touched.first && props.errors.first && 
-                    <p className='error'>{props.errors.first}</p>
-                }
-                <Field type="text" name="last" placeholder="LAST NAME" />
-                {props.touched.last && props.errors.last && 
-                    <p className='error'>{props.errors.last}</p>
-                }
-                <Field type="text" name="username" placeholder="EMAIL" />
-                {props.touched.username && props.errors.username && 
-                    <p className='error'>{props.errors.username}</p>
-                }
-                <Field type="text" name="password" placeholder="PASSWORD" />
-                {props.touched.password && props.errors.password && 
-                    <p className='error'>{props.errors.password}</p>
-                }
-                <Field type="text" name="confirm" placeholder="CONFIRM PASSWORD" />
-                {props.touched.confirm && props.errors.confirm && 
-                    <p className='error'>{props.errors.confirm}</p>
-                }
-                <p>Already have an account? <Link to= {`/login`} >Log in now!</Link></p>
-                <button type="submit">Sign Up</button>
-            </Form>
+        <div style={containerStyle}>
+            <div className='testimonial' style={testimonialStyle}>
+                <img/>
+                <p>[INSERT TESTIMONIAL HERE]</p>
+            </div>
+            <div className="sign-up-form" >
+                <Form style={formStyle}>
+                    <h2>Create Account</h2>
+                    <Field type="text" name="first" placeholder="FIRST NAME" style={fieldStyle}/>
+                    {props.touched.first && props.errors.first && 
+                       <p className='error'>{props.errors.first}</p>
+                    }
+                    <Field type="text" name="last" placeholder="LAST NAME" style={fieldStyle}/>
+                    {props.touched.last && props.errors.last && 
+                        <p className='error'>{props.errors.last}</p>
+                    }
+                    <Field type="text" name="username" placeholder="EMAIL" style={fieldStyle}/>
+                    {props.touched.username && props.errors.username && 
+                        <p className='error'>{props.errors.username}</p>
+                    }
+                    <Field type="text" name="password" placeholder="PASSWORD" style={fieldStyle}/>
+                    {props.touched.password && props.errors.password && 
+                        <p className='error'>{props.errors.password}</p>
+                    }
+                    <Field type="text" name="confirm" placeholder="CONFIRM PASSWORD" style={fieldStyle} />
+                    {props.touched.confirm && props.errors.confirm && 
+                        <p className='error'>{props.errors.confirm}</p>
+                    }
+                    <p>Already have an account? <Link to= {`/login`} >Log in now!</Link></p>
+                    <button type="submit">Sign Up</button>
+                </Form>
+            </div>
         </div>
     )
 }
