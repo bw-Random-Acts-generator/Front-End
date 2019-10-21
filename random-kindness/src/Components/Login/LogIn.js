@@ -3,14 +3,14 @@ import { axiosWithAuth } from './axiosWithAuth.js';
 import axios from 'axios';
 
 const LogIn = (props) => {
-const [cred, setCred] = useState({email: '', password: ''});
+const [cred, setCred] = useState({username: '', password: ''});
 
 const newLogin = e => {
     e.preventDefault();
     axiosWithAuth().post('https://random-acts0519.herokuapp.com/api/login', cred)
                    .then(result => {
                        localStorage.setItem('token', result.data.token);
-                       this.props.history.push('/');
+                       props.history.push('/');
                    })
 }
 
@@ -25,13 +25,13 @@ return (
     <h2>Welcome back!</h2>
     <h2>Sign into your acount</h2>
     <div>
-       <label htmlFor='email' ></label>
+       <label htmlFor='username' ></label>
        <input
-          id="email"
-          name="email"
+          id="username"
+          name="username"
           type="text"
           placeholder="EMAIL"
-          value={cred.email}
+          value={cred.username}
           onChange={handleChange}
           />
        <label htmlFor='password' ></label>

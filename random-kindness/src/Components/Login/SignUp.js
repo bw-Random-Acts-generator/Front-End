@@ -62,8 +62,13 @@ const myMapProps = props => {
 
 const mySubmit = (values, { setStatus }) => {
     console.log(values);
+    const newVal = {
+        username: values.username,
+        password: values.password,
+        name: values.first + ' ' + values.last
+    }
     axios
-        .post(`https://random-acts0519.herokuapp.com/api/register`, values)
+        .post(`https://random-acts0519.herokuapp.com/api/register`, newVal)
         .then(res => {
             console.log(res);
             setStatus(res.data);
@@ -74,10 +79,8 @@ const mySubmit = (values, { setStatus }) => {
 const yupSchema = Yup.object().shape({
     first: Yup.string().required("Name is required"),
     last: Yup.string().required("Name is required"),
-    email: Yup.string().email("Please enter a valid email").required("Email is required"),
+    username: Yup.string().email("Please enter a valid email").required("Email is required"),
     password: Yup.string().min(8, 'Password must be 8 characters or longer').required('Password is required'),
-    confirm: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match'),
-    
 });
 
 const formikObj = {
