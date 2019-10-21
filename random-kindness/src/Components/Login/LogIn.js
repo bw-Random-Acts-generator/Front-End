@@ -5,6 +5,25 @@ import axios from 'axios';
 const LogIn = (props) => {
 const [cred, setCred] = useState({username: '', password: ''});
 
+
+//styles
+const containerStyle = {
+    backgroundColor: '#9C9B97',
+    height: '60rem',
+    display: 'flex',
+    justifyContent: 'center',
+}
+
+const formStyle = {
+    backgroundColor: '	#FAEFED',
+    marginTop: '10%',
+    borderRadius: '50%',
+    height: '70%',
+    width: '50%',
+    display: 'flex',
+    flexDirection: 'column',
+    
+}
 const newLogin = e => {
     e.preventDefault();
     axiosWithAuth().post('https://random-acts0519.herokuapp.com/api/login', cred)
@@ -21,8 +40,8 @@ const handleChange = e => {
     })
 }
 return (
- <div>
- <form  className="log-in" onSubmit={newLogin}>
+ <div style={containerStyle}>
+ <form  className="log-in" onSubmit={newLogin} style={formStyle}>
     <h2>Welcome back!</h2>
     <h2>Sign into your acount</h2>
     <div>
@@ -46,8 +65,6 @@ return (
           />
           <p>Forgot Password?</p>
           <button type="submit">Sign In</button>
-      </div>
-      <div>
     </div>
  </form>
  </div>
