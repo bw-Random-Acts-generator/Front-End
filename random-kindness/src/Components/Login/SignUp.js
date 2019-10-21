@@ -13,26 +13,53 @@ const SignUp = (props) => {
         display: 'flex',
         border: '1px solid black',
         width: '100%',
-        height: '45rem'
+        height: '60rem'
+    }
+
+    const headerStyle = {
+        marginTop: '8%',
+        color: '#918C89'
     }
     const testimonialStyle = {
         width: '50%'
     }
     const formStyle = {
+        marginTop: '15%',
         backgroundColor: 'white',
         border: '1px solid #918C89',
         display: 'flex',
         flexDirection: 'column',
-        width: '200%',
-        height: '40rem'
+        width: '150%',
+        height: '52rem',
+        fontSize: '1.5rem'
     }
 
     const fieldStyle = {
         color: '#918C89',
-        width: '90%',
-        marginLeft: '3%',
-        marginBottom: '3%',
-        padding: '1.5%'
+        width: '85%',
+        margin: '3.5%',
+        padding: '2.5%',
+        fontSize: '1.5rem'
+    }
+
+    const buttonConStyle = {
+        display: 'flex',
+        justifyContent: 'space-between'
+    }
+    const loginReminder = {
+        color: '#918C89',
+        width: '60%',
+        textDecoration: 'none',
+        marginLeft: '3%'
+    }
+    const buttonStyle = {
+        backgroundColor: 'white',
+        fontSize: '1.5rem',
+        color: '#918C89',
+        width: '17.5%',
+        border: '1px solid #918C89',
+        marginRight: '6%',
+        height: '75%'
     }
     useEffect(() => {
         if(props.status) {
@@ -49,29 +76,21 @@ const SignUp = (props) => {
             </div>
             <div className="sign-up-form" >
                 <Form style={formStyle}>
-                    <h2>Create Account</h2>
+                    <p style={headerStyle}>Create Account</p>
                     <Field type="text" name="first" placeholder="FIRST NAME" style={fieldStyle}/>
-                    {props.touched.first && props.errors.first && 
-                       <p className='error'>{props.errors.first}</p>
-                    }
+                    
                     <Field type="text" name="last" placeholder="LAST NAME" style={fieldStyle}/>
-                    {props.touched.last && props.errors.last && 
-                        <p className='error'>{props.errors.last}</p>
-                    }
+                    
                     <Field type="text" name="username" placeholder="EMAIL" style={fieldStyle}/>
-                    {props.touched.username && props.errors.username && 
-                        <p className='error'>{props.errors.username}</p>
-                    }
+                    
                     <Field type="text" name="password" placeholder="PASSWORD" style={fieldStyle}/>
-                    {props.touched.password && props.errors.password && 
-                        <p className='error'>{props.errors.password}</p>
-                    }
+                    
                     <Field type="text" name="confirm" placeholder="CONFIRM PASSWORD" style={fieldStyle} />
-                    {props.touched.confirm && props.errors.confirm && 
-                        <p className='error'>{props.errors.confirm}</p>
-                    }
-                    <p>Already have an account? <Link to= {`/login`} >Log in now!</Link></p>
-                    <button type="submit">Sign Up</button>
+                    
+                    <div style={buttonConStyle}>
+                        <p style={loginReminder}>Already have an account? <Link to= {`/login`} style={loginReminder}>Log in now!</Link></p>
+                        <button type="submit" style={buttonStyle}>Sign Up</button>
+                    </div>
                 </Form>
             </div>
         </div>
