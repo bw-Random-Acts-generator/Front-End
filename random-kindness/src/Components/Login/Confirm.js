@@ -1,4 +1,5 @@
 import React from 'react';
+
 var stopwatch = require('../../img/stopwatch.png');
 
 const Confirm = () => {

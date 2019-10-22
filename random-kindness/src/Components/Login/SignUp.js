@@ -68,7 +68,7 @@ const SignUp = (props) => {
     useEffect(() => {
         if(props.status) {
             setUsers([...users, props.status])
-            alert('Thank you for registering your account.');
+            props.history.push('/signup-confirm');
         }
     }, [props.status])
     // console.log(props.touched);
