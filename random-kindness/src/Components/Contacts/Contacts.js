@@ -3,9 +3,9 @@ import React from "react";
 const SoloContact = props => {
   return (
     <div>
-      {props.contactList.map(contact => {
+      {props.contactList.map((contact, index) => {
         return (
-          <div key={contact.user_id}>
+          <div key={index}>
             <h2>{contact.name}</h2>
             <h3>{contact.phone}</h3>
             <h3>{contact.email}</h3>
