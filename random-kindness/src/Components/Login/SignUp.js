@@ -73,6 +73,8 @@ const SignUp = (props) => {
     }, [props.status])
     // console.log(props.touched);
     // console.log(props.errors);
+    props.callBack('#F2CFC9');
+    console.log(props.callBack)
     return (
         <div style={containerStyle}>
             <div className='testimonial' style={testimonialStyle}>
