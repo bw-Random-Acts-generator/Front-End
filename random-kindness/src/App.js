@@ -11,11 +11,13 @@ import Forgot from './Components/Login/Forgot.js';
 import Header from './Components/Header.js';
 import Home from './Components/Home.js';
 import Acts from './Components/RandomActs/Acts.js';
+import Sign from './Components/Sign.js';
 
 function App() {
   return (
     <div className="App">
       <Route path="/" component={Header} />
+      <Route path="/" component={Sign} />
       <Route exact path = "/" component={Home} />
       <Route path="/acts" component={Acts} />
       <Route path="/contacts" component={ContactsList} />
