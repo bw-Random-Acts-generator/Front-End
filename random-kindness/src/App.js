@@ -8,13 +8,17 @@ import SignUp from './Components/Login/SignUp.js';
 import LogIn from './Components/Login/LogIn.js';
 import Confirm from './Components/Login/Confirm.js';
 import Forgot from './Components/Login/Forgot.js';
+import Header from './Components/Header.js';
+import Home from './Components/Home.js';
+import Acts from './Components/RandomActs/Acts.js';
 
 function App() {
   return (
     <div className="App">
-
-      <ContactsList />
-      Hello World!
+      <Route path="/" component={Header} />
+      <Route exact path = "/" component={Home} />
+      <Route path="/acts" component={Acts} />
+      <Route path="/contacts" component={ContactsList} />
       <Route path="/signup" component={SignUp} />
       <Route path="/login" component={LogIn} />
       <Route path="/signup-confirm" component={Confirm} />
