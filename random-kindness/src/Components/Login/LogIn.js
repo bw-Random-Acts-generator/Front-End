@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { axiosWithAuth } from './axiosWithAuth.js';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const LogIn = (props) => {
 const [cred, setCred] = useState({username: '', password: ''});
@@ -110,7 +111,7 @@ return (
           onChange={handleChange}
           style={loginStyle}
           />
-          <p style={forgotStyle}>Forgot Password?</p>
+          <Link to={'/forgot'} style={forgotStyle}>Forgot Password?</Link>
           <button type="submit" style={buttonStyle}>Sign In</button>
     </div>
  </form>
