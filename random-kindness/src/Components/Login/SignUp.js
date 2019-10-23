@@ -8,6 +8,8 @@ import { Link } from 'react-router-dom';
 
 const SignUp = (props) => {
     const [users, setUsers] = useState([]);
+
+    //styles
     const containerStyle= {
         backgroundColor: '#F2CFC9',
         display: 'flex',
@@ -61,9 +63,12 @@ const SignUp = (props) => {
         marginRight: '6%',
         height: '75%'
     }
+
+    //useeffect to setuser to what the form is filled out as
     useEffect(() => {
         if(props.status) {
             setUsers([...users, props.status])
+            props.history.push('/signup-confirm');
         }
     }, [props.status])
     // console.log(props.touched);
