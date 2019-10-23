@@ -19,7 +19,7 @@ class Acts extends React.Component {
     };
 
     axios
-      .get("https://random-acts-webpt5.herokuapp.com/api/acts", options)
+      .get("https://random-acts0519.herokuapp.com/api/acts", options)
       .then(res => {
         this.setState({
           acts: res.data,
