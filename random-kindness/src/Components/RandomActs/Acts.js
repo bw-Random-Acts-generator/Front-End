@@ -11,7 +11,7 @@ class Acts extends React.Component {
   }
 
   componentDidMount = () => {
-    const token = localStorage.getItem("jwt");
+    const token = localStorage.getItem("token");
     const options = {
       headers: {
         Authorization: token
@@ -19,7 +19,7 @@ class Acts extends React.Component {
     };
 
     axios
-      .get("https://random-acts0519.herokuapp.com/api/action", options)
+      .get("https://random-acts0519.herokuapp.com/api/actions", options)
       .then(res => {
         this.setState({
           acts: res.data,
