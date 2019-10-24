@@ -2,13 +2,14 @@ import React, { useState, useEffect } from "react";
 import ContactForm from "./ContactsForm";
 import Contacts from "./Contacts";
 import axios from "axios";
+import "./Contacts.css";
 
 function ContactsApp() {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://random-acts0519.herokuapp.com/api/contacts", { headers: {Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoxMDIsInVzZXJuYW1lIjoianRlc3QiLCJpYXQiOjE1NzE3MTYzNzYsImV4cCI6MTU3MTgwMjc3Nn0.is711-HYibx3pOUV0yzthL7VtG7j-hkT8Z3LFzvp1S4"} })
+      .get("https://random-acts0519.herokuapp.com/api/contacts", { headers: {Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoxMDIsInVzZXJuYW1lIjoianRlc3QiLCJpYXQiOjE1NzE4NzIyMjMsImV4cCI6MTU3MTk1ODYyM30.dMhbCeZpH4HT72NEZRCgZwg3dX9rChO8mvq4QpQe6os"} })
       .then(response => {
         const contactList = response.data;
         console.log(response);
@@ -42,10 +43,16 @@ function ContactsApp() {
   };
 
   return (
-    <div>
-      <h1>Contacts</h1>
-      <ContactForm addContactFn={addContact} />
+    <div className="container">
+      <h1 className="title">CONTACTS</h1>
+      <div className="body">
+      <div className="contact-list">
       <Contacts contactList={contacts} delContactFn={delContact} />
+      </div>
+      <div className="contact-form">
+      <ContactForm addContactFn={addContact} />
+      </div>
+      </div>
     </div>
   );
 }

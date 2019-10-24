@@ -1,0 +1,47 @@
+body {
+    background-color: #eceae0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+
+.title {
+    font-weight: bold;
+    color: 	#8E8D89;
+}
+
+.body {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5em;
+}
+
+
+/* Contacts List */
+.custom-btn {
+    background-color:#EB7F75 ;
+    font-weight: bold;
+    border-radius: 2rem;
+}
+
+
+/* Contacts */
+.contacts-card {
+    background-color: #fcefed;
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-btn {
+    background: none;
+    border: none;
+}
+
+.contacts-name {
+    background-color: #e2e2e1;
+    color: 	#8E8D89;
+    font-size: 1.5rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    width: 30rem;  
+}
