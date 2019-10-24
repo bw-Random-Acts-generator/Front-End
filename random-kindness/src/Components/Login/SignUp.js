@@ -25,7 +25,7 @@ const SignUp = (props) => {
     }
     const picConStyle = {
         height: '35%',
-        width: '40%',
+        width: '35%',
         borderRadius: '50%',
         overflow: 'hidden',
         display: 'flex',
@@ -37,10 +37,21 @@ const SignUp = (props) => {
     }
     const testimonialStyle = {
         width: '50%',
+        paddingTop: '5%',
+        paddingBottom: '5%',
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'space-evenly',
         alignItems: 'center'
+    }
+    const testimonialTextStyle = {
+        width: '50%',
+        fontSize: '2rem',
+    }
+
+    const fromStyle = {
+        fontSize: '2rem',
+        margin: '0'
     }
     const formStyle = {
         marginTop: '15%',
@@ -48,7 +59,7 @@ const SignUp = (props) => {
         border: '1px solid #918C89',
         display: 'flex',
         flexDirection: 'column',
-        width: '150%',
+        width: '135%',
         height: '54rem',
         fontSize: '1.5rem'
     }
@@ -98,7 +109,11 @@ const SignUp = (props) => {
                 <div style={picConStyle}>
                     <img src={woman} style={picStyle}/>
                 </div>
-                <p>[INSERT TESTIMONIAL HERE]</p>
+                <p style={testimonialTextStyle}>"Random Acts Generator helped remind me that my children are watching everything I do and it doesn't cost anything to be kind!"</p>
+                <div>
+                    <p style={fromStyle}>Beth Ann</p>
+                    <p style={fromStyle}>New York</p>
+                </div>
             </div>
             <div className="sign-up-form" >
                 <Form style={formStyle}>
