@@ -23,8 +23,24 @@ const SignUp = (props) => {
         marginTop: '8%',
         color: '#918C89'
     }
+    const picConStyle = {
+        height: '35%',
+        width: '40%',
+        borderRadius: '50%',
+        overflow: 'hidden',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+    const picStyle = {
+        height: '100%',
+    }
     const testimonialStyle = {
-        width: '50%'
+        width: '50%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-evenly',
+        alignItems: 'center'
     }
     const formStyle = {
         marginTop: '15%',
@@ -79,7 +95,9 @@ const SignUp = (props) => {
     return (
         <div style={containerStyle}>
             <div className='testimonial' style={testimonialStyle}>
-                <img src={woman}/>
+                <div style={picConStyle}>
+                    <img src={woman} style={picStyle}/>
+                </div>
                 <p>[INSERT TESTIMONIAL HERE]</p>
             </div>
             <div className="sign-up-form" >
