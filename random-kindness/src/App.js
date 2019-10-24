@@ -17,7 +17,9 @@ function App() {
   const [color, setColor] = useState('');
   const backgroundStyle = {
     backgroundColor: color,
-    fontFamily: 'Montserrat'
+    fontFamily: "Montserrat, sans-serif",
+    display: 'flex',
+    flexDirection: 'column'
   }
   const callBack = (data) => {
     setColor(data);
