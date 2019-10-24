@@ -16,7 +16,8 @@ import Sign from './Components/Sign.js';
 function App() {
   const [color, setColor] = useState('');
   const backgroundStyle = {
-    backgroundColor: color
+    backgroundColor: color,
+    fontFamily: 'Montserrat'
   }
   const callBack = (data) => {
     setColor(data);
@@ -26,9 +27,10 @@ function App() {
     <div className="App" style={backgroundStyle}>
       <Route path="/" render={(props) => <Header {...props} color={color}/> }/>
       <Route path="/" component={Sign} />
-      <Route exact path = "/" component={Home} />
+      <Route exact path="/" render={(props) => <Home {...props} callBack={callBack}/> } />
       <Route path="/acts" component={Acts} />
-      <Route path="/contacts" component={ContactsList} />
+      <Route path="/acts" render={(props) => <Acts {...props} callBack={callBack}/> } />
+      <Route path="/contacts" render={(props) => <ContactsList {...props} callBack={callBack}/> } />
       <Route path="/signup" render={(props) => <SignUp {...props} callBack={callBack}/> } />
       <Route path="/login" render={(props) => <LogIn {...props} callBack={callBack}/> }/>
       <Route path="/signup-confirm" component={Confirm} />

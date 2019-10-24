@@ -13,9 +13,9 @@ const SignUp = (props) => {
     const containerStyle= {
         backgroundColor: '#F2CFC9',
         display: 'flex',
-        border: '1px solid black',
         width: '100%',
-        height: '60rem'
+        height: '60rem',
+        
     }
 
     const headerStyle = {
@@ -32,7 +32,7 @@ const SignUp = (props) => {
         display: 'flex',
         flexDirection: 'column',
         width: '150%',
-        height: '52rem',
+        height: '54rem',
         fontSize: '1.5rem'
     }
 
