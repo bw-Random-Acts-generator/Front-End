@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+var woman = require('../../img/woman.jpeg');
 
 
 const SignUp = (props) => {
@@ -78,7 +79,7 @@ const SignUp = (props) => {
     return (
         <div style={containerStyle}>
             <div className='testimonial' style={testimonialStyle}>
-                <img/>
+                <img src={woman}/>
                 <p>[INSERT TESTIMONIAL HERE]</p>
             </div>
             <div className="sign-up-form" >
