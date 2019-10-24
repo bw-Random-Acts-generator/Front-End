@@ -10,7 +10,7 @@ import Confirm from './Components/Login/Confirm.js';
 import Forgot from './Components/Login/Forgot.js';
 import Header from './Components/Header.js';
 import Home from './Components/Home.js';
-import Acts from './Components/RandomActs/Acts.js';
+import Acts from './Components/RandomActs/generateAct.js';
 import Sign from './Components/Sign.js';
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
       <Route path="/" component={Header} />
       <Route path="/" component={Sign} />
       <Route exact path = "/" component={Home} />
-      <Route path="/acts" component={Acts} />
+      <Route path="/generateAct" component={Acts} />
       <Route path="/contacts" component={ContactsList} />
       <Route path="/signup" component={SignUp} />
       <Route path="/login" component={LogIn} />
