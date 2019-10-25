@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Sign = () => {
+const Sign = (props) => {
+    const state = {
+        loggedIn: props.log
+    }
     const containerStyle = {
         position: 'relative',
         left: '71%',
@@ -29,11 +32,27 @@ const Sign = () => {
         alert('Come back soon!')
         window.location.href = '/login';
     }
+    console.log(state.loggedIn)
+    const buttons = () => {
+        if(state.loggedIn) {
+            return(
+                <div style={containerStyle}>
+                    <div onClick={logout} style={buttonStyle}>Log Out</div>
+                </div>
+            )
+        }
+        else{
+            return (
+                <div style={containerStyle}>
+                    <Link to="/signup" style={buttonStyle}>Sign Up</Link>
+                    <Link to="/login" style={buttonStyle}>Sign In</Link>
+                </div>
+            )
+        }
+    };
     return (
-        <div style={containerStyle}>
-            <Link to="/signup" style={buttonStyle}>Sign Up</Link>
-            <Link to="/login" style={buttonStyle}>Sign In</Link>
-            <div onClick={logout} style={buttonStyle}>Log Out</div>
+        <div>
+            {buttons()}
         </div>
     )
 }
