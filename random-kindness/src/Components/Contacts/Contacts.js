@@ -31,9 +31,7 @@ const SoloContact = props => {
                   </div>
                   <button 
                   className="card-btn" 
-                  onClick={() => props.delContactFn(contact.user_id)}>
-
-                  </button>
+                  onClick={() => props.delContactFn(contact.user_id)}>X</button>
                 </CardBody>
               </Card>
             </Collapse>
