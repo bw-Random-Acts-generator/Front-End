@@ -11,7 +11,7 @@ const SoloContact = props => {
 
   return (
     <div>
-      {props.contactList.map(contact => {
+      {props.contactList.map( contact => {
         return (
           <div key={contact.user_id}>
             <Button

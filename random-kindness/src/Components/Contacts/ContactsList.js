@@ -4,9 +4,9 @@ import Contacts from "./Contacts";
 import axios from "axios";
 import "./Contacts.css";
 
-function ContactsApp() {
+function ContactsApp(props) {
   const [contacts, setContacts] = useState([]);
-
+  props.callBack('#ECE9E0');
   useEffect(() => {
     axios
       .get("https://random-acts0519.herokuapp.com/api/contacts", { headers: {Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoxMDIsInVzZXJuYW1lIjoianRlc3QiLCJpYXQiOjE1NzE5Njc0MzIsImV4cCI6MTU3MjA1MzgzMn0.WU3wkLaKBALBXB4f0eTZjp7NwnPKdHa3ZMdidGJN4xY"} })
