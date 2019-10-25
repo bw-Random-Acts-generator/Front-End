@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 var stopwatch = require('../../img/stopwatch.png');
 
-const Confirm = () => {
+const Confirm = (props) => {
     const containerStyle= {
         backgroundColor: '#F2CFC9',
         display: 'flex',
@@ -21,6 +21,10 @@ const Confirm = () => {
         color: '#918C89',
         fontSize: '1.5rem'
     }
+
+    useEffect(() => {
+        setTimeout(function(){ props.history.push('/login'); }, 3000);
+    })
     return(
         <div style={containerStyle}>
             <img src={stopwatch} style={timerStyle}/>
