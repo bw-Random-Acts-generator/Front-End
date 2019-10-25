@@ -10,7 +10,7 @@ const SoloContact = props => {
   
   return (
     <div>
-      {props.contactList.map(contact => {
+      {props.contactList.map( contact => {
         return (
           <div key={contact.user_id}>
             <Button
@@ -32,7 +32,7 @@ const SoloContact = props => {
                   <button 
                   className="card-btn" 
                   onClick={() => props.delContactFn(contact.user_id)}>
-                  
+
                   </button>
                 </CardBody>
               </Card>
