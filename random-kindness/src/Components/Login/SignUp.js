@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+var woman = require('../../img/woman.jpeg');
 
 
 const SignUp = (props) => {
@@ -22,8 +23,35 @@ const SignUp = (props) => {
         marginTop: '8%',
         color: '#918C89'
     }
+    const picConStyle = {
+        height: '35%',
+        width: '35%',
+        borderRadius: '50%',
+        overflow: 'hidden',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center'
+    }
+    const picStyle = {
+        height: '100%',
+    }
     const testimonialStyle = {
-        width: '50%'
+        width: '50%',
+        paddingTop: '5%',
+        paddingBottom: '5%',
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-evenly',
+        alignItems: 'center'
+    }
+    const testimonialTextStyle = {
+        width: '50%',
+        fontSize: '2rem',
+    }
+
+    const fromStyle = {
+        fontSize: '2rem',
+        margin: '0'
     }
     const formStyle = {
         marginTop: '15%',
@@ -31,7 +59,7 @@ const SignUp = (props) => {
         border: '1px solid #918C89',
         display: 'flex',
         flexDirection: 'column',
-        width: '150%',
+        width: '135%',
         height: '54rem',
         fontSize: '1.5rem'
     }
@@ -78,8 +106,14 @@ const SignUp = (props) => {
     return (
         <div style={containerStyle}>
             <div className='testimonial' style={testimonialStyle}>
-                <img/>
-                <p>[INSERT TESTIMONIAL HERE]</p>
+                <div style={picConStyle}>
+                    <img src={woman} style={picStyle}/>
+                </div>
+                <p style={testimonialTextStyle}>"Random Acts Generator helped remind me that my children are watching everything I do and it doesn't cost anything to be kind!"</p>
+                <div>
+                    <p style={fromStyle}>Beth Ann</p>
+                    <p style={fromStyle}>New York</p>
+                </div>
             </div>
             <div className="sign-up-form" >
                 <Form style={formStyle}>

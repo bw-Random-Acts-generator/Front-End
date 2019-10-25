@@ -20,22 +20,30 @@ function App() {
   const [color, setColor] = useState('');
   const backgroundStyle = {
     backgroundColor: color,
-    fontFamily: 'Montserrat'
+    fontFamily: "Montserrat, sans-serif",
+    display: 'flex',
+    flexDirection: 'column'
   }
   const callBack = (data) => {
     setColor(data);
     console.log(color)
   }
+  const [log, setLog] = useState(false);
+  const logCallBack = (data) => {
+    setLog(data);
+    console.log(log)
+  }
+
   return (
     <div className="App" style={backgroundStyle}>
       <Route path="/" render={(props) => <Header {...props} color={color}/> }/>
-      <Route path="/" component={Sign} />
+      <Route path="/" component={Sign} log={log}/>
       <Route exact path="/" render={(props) => <Home {...props} callBack={callBack}/> } />
       <Route path="/acts" component={Acts} />
       <Route path="/acts" render={(props) => <Acts {...props} callBack={callBack}/> } />
       <Route path="/contacts" render={(props) => <ContactsList {...props} callBack={callBack}/> } />
       <Route path="/signup" render={(props) => <SignUp {...props} callBack={callBack}/> } />
-      <Route path="/login" render={(props) => <LogIn {...props} callBack={callBack}/> }/>
+      <Route path="/login" render={(props) => <LogIn {...props} callBack={callBack} logCallBack={logCallBack}/> }/>
       <Route path="/signup-confirm" component={Confirm} />
       <Route path="/forgot" component={Forgot} />
     </div>

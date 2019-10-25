@@ -69,8 +69,10 @@ const newLogin = e => {
     e.preventDefault();
     axiosWithAuth().post('https://random-acts0519.herokuapp.com/api/login', cred)
                    .then(result => {
+                        props.logCallBack(true);
                        alert(`Welcome back ${cred.username}.`);
                        localStorage.setItem('token', result.data.token);
+                       props.logCallBack(true);
                        props.history.push('/');
                    })
                    .catch(err => {
