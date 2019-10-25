@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="App" style={backgroundStyle}>
       <Route path="/" render={(props) => <Header {...props} color={color}/> }/>
-      <Route path="/" component={Sign} log={log}/>
+      <Route path="/" render={(props) => <Sign {...props} log={log}/>}/>
       <Route exact path="/" render={(props) => <Home {...props} callBack={callBack}/> } />
       <Route path="/acts" component={Acts} />
       <Route path="/acts" render={(props) => <Acts {...props} callBack={callBack}/> } />
