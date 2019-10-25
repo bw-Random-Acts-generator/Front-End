@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Button, Form, FormGroup, Label, Input, FormText } from "reactstrap";
+import "./Contacts.css";
 
 const ContactForm = props => {
   const [contact, setContact] = useState({
@@ -28,63 +30,72 @@ const ContactForm = props => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Add Contacts</h2>
-      <label htmlFor="name">Name</label>
-      <input
-        id="name"
-        value={contact.name}
-        name="name"
-        type="text"
-        onChange={handleChange}
-      />
-
-      <label htmlFor="phone">Phone</label>
-      <input
-        id="phone"
-        value={contact.phone}
-        name="phone"
-        type="text"
-        onChange={handleChange}
-      />
-
-      <label htmlFor="email">Email</label>
-      <input
-        id="email"
-        value={contact.email}
-        name="email"
-        type="email"
-        onChange={handleChange}
-      />
-
-      <label htmlFor="address">Address</label>
-      <input
-        id="address"
-        value={contact.address}
-        name="address"
-        type="text"
-        onChange={handleChange}
-      />
-      <label htmlFor="group">Group</label>
-      <input
-        id="group"
-        value={contact.group}
-        name="group"
-        type="text"
-        onChange={handleChange}
-      />
-      <label htmlFor="notes">Notes</label>
-      <input
-        id="notes"
-        value={contact.notes}
-        name="notes"
-        type="text area"
-        onChange={handleChange}
-      />
-
-      <button type="submit">Add Contact</button>
-
-    </form>
+    <Form onSubmit={handleSubmit}>
+      
+        <h2>Add Contacts</h2>
+        <FormGroup>
+        <Label htmlFor="name">Name</Label>
+        <Input
+          id="name"
+          value={contact.name}
+          name="name"
+          type="text"
+          onChange={handleChange}
+        />
+        </FormGroup>
+        <FormGroup>
+        <Label htmlFor="phone">Phone</Label>
+        <Input
+          id="phone"
+          value={contact.phone}
+          name="phone"
+          type="text"
+          onChange={handleChange}
+        />
+        </FormGroup>
+        <FormGroup>
+        <Label htmlFor="email">Email</Label>
+        <Input
+          id="email"
+          value={contact.email}
+          name="email"
+          type="email"
+          onChange={handleChange}
+        />
+        </FormGroup>
+        <FormGroup>
+        <Label htmlFor="address">Address</Label>
+        <Input
+          id="address"
+          value={contact.address}
+          name="address"
+          type="text"
+          onChange={handleChange}
+        />
+        </FormGroup>
+        <FormGroup>
+        <Label htmlFor="group">Group</Label>
+        <Input
+          id="group"
+          value={contact.group}
+          name="group"
+          type="text"
+          onChange={handleChange}
+        />
+        </FormGroup>
+        <FormGroup>
+        <Label htmlFor="notes">Notes</Label>
+        <Input
+          id="notes"
+          value={contact.notes}
+          name="notes"
+          type="textarea"
+          onChange={handleChange}
+        />
+        </FormGroup>
+        <Button className="custom-btn" type="submit">Add Contact</Button>
+     
+    </Form>
   );
 };
 

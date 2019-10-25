@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 import ContactsList from "./Components/Contacts/ContactsList";
 import { Route } from 'react-router-dom';
 import './App.css';
