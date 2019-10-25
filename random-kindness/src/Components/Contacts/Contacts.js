@@ -7,7 +7,7 @@ const SoloContact = props => {
 
   const [collapse, setCollapse] = useState(false);
   const toggle = () => setCollapse(!collapse);
-
+  
   return (
     <div>
       {props.contactList.map( contact => {
@@ -32,6 +32,7 @@ const SoloContact = props => {
                   <button 
                   className="card-btn" 
                   onClick={() => props.delContactFn(contact.user_id)}>
+
                   </button>
                 </CardBody>
               </Card>

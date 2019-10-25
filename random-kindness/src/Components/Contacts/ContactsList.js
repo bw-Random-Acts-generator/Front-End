@@ -7,9 +7,15 @@ import "./Contacts.css";
 function ContactsApp(props) {
   const [contacts, setContacts] = useState([]);
   props.callBack('#ECE9E0');
+  const token = localStorage.getItem("token");
+    const options = {
+      headers: {
+        Authorization: token
+      }
+    }
   useEffect(() => {
     axios
-      .get("https://random-acts0519.herokuapp.com/api/contacts", { headers: {Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoxMDIsInVzZXJuYW1lIjoianRlc3QiLCJpYXQiOjE1NzE5Njc0MzIsImV4cCI6MTU3MjA1MzgzMn0.WU3wkLaKBALBXB4f0eTZjp7NwnPKdHa3ZMdidGJN4xY"} })
+      .get("https://random-acts0519.herokuapp.com/api/contacts", options)
       .then(response => {
         const contactList = response.data;
         console.log(response);
