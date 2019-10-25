@@ -9,7 +9,7 @@ function ContactsApp() {
 
   useEffect(() => {
     axios
-      .get("https://random-acts0519.herokuapp.com/api/contacts", { headers: {Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoxMDIsInVzZXJuYW1lIjoianRlc3QiLCJpYXQiOjE1NzE4NzIyMjMsImV4cCI6MTU3MTk1ODYyM30.dMhbCeZpH4HT72NEZRCgZwg3dX9rChO8mvq4QpQe6os"} })
+      .get("https://random-acts0519.herokuapp.com/api/contacts", { headers: {Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWJqZWN0IjoxMDIsInVzZXJuYW1lIjoianRlc3QiLCJpYXQiOjE1NzE5Njc0MzIsImV4cCI6MTU3MjA1MzgzMn0.WU3wkLaKBALBXB4f0eTZjp7NwnPKdHa3ZMdidGJN4xY"} })
       .then(response => {
         const contactList = response.data;
         console.log(response);
