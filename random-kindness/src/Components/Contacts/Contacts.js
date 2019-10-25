@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import { Collapse, Button, CardBody, Card } from "reactstrap";
 import "./Contacts.css"
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const SoloContact = props => {
 
   const [collapse, setCollapse] = useState(false);
   const toggle = () => setCollapse(!collapse);
-
+  
   return (
     <div>
-      {props.contactList.map((contact, index) => {
+      {props.contactList.map(contact => {
         return (
-         contacts-styling
           <div key={contact.user_id}>
             <Button
               className="contacts-name"
@@ -34,7 +32,7 @@ const SoloContact = props => {
                   <button 
                   className="card-btn" 
                   onClick={() => props.delContactFn(contact.user_id)}>
-                  <FontAwesomeIcon icon={faTimesCircle} />
+                  
                   </button>
                 </CardBody>
               </Card>
