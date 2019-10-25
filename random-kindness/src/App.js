@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 import ContactsList from "./Components/Contacts/ContactsList";
 import { Route } from 'react-router-dom';
 import './App.css';
@@ -14,15 +17,25 @@ import Acts from './Components/RandomActs/generateAct.js';
 import Sign from './Components/Sign.js';
 
 function App() {
+  const [color, setColor] = useState('');
+  const backgroundStyle = {
+    backgroundColor: color,
+    fontFamily: 'Montserrat'
+  }
+  const callBack = (data) => {
+    setColor(data);
+    console.log(color)
+  }
   return (
-    <div className="App">
-      <Route path="/" component={Header} />
+    <div className="App" style={backgroundStyle}>
+      <Route path="/" render={(props) => <Header {...props} color={color}/> }/>
       <Route path="/" component={Sign} />
-      <Route exact path = "/" component={Home} />
-      <Route path="/generateAct" component={Acts} />
-      <Route path="/contacts" component={ContactsList} />
-      <Route path="/signup" component={SignUp} />
-      <Route path="/login" component={LogIn} />
+      <Route exact path="/" render={(props) => <Home {...props} callBack={callBack}/> } />
+      <Route path="/acts" component={Acts} />
+      <Route path="/acts" render={(props) => <Acts {...props} callBack={callBack}/> } />
+      <Route path="/contacts" render={(props) => <ContactsList {...props} callBack={callBack}/> } />
+      <Route path="/signup" render={(props) => <SignUp {...props} callBack={callBack}/> } />
+      <Route path="/login" render={(props) => <LogIn {...props} callBack={callBack}/> }/>
       <Route path="/signup-confirm" component={Confirm} />
       <Route path="/forgot" component={Forgot} />
     </div>

@@ -9,7 +9,7 @@ class Acts extends React.Component {
       acts: []
     };
   }
-
+  
   componentDidMount = () => {
     const token = localStorage.getItem("token");
     const options = {
