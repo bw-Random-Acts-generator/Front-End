@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { Collapse, Button, CardBody, Card } from "reactstrap";
 import "./Contacts.css"
-import { faTimesCircle } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 const SoloContact = props => {
 
@@ -33,7 +32,6 @@ const SoloContact = props => {
                   <button 
                   className="card-btn" 
                   onClick={() => props.delContactFn(contact.user_id)}>
-                  <FontAwesomeIcon icon={faTimesCircle} />
                   </button>
                 </CardBody>
               </Card>
