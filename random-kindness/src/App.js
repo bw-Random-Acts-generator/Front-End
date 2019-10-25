@@ -13,7 +13,7 @@ import Confirm from './Components/Login/Confirm.js';
 import Forgot from './Components/Login/Forgot.js';
 import Header from './Components/Header.js';
 import Home from './Components/Home.js';
-import Acts from './Components/RandomActs/Acts.js';
+import Acts from './Components/RandomActs/generateAct.js';
 import Sign from './Components/Sign.js';
 
 function App() {
