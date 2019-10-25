@@ -11,8 +11,9 @@ const SoloContact = props => {
 
   return (
     <div>
-      {props.contactList.map(contact => {
+      {props.contactList.map((contact, index) => {
         return (
+         contacts-styling
           <div key={contact.user_id}>
             <Button
               className="contacts-name"

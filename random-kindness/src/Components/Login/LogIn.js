@@ -64,6 +64,7 @@ const buttonStyle = {
     marginTop: '2%'
 }
 
+
 const newLogin = e => {
     e.preventDefault();
     axiosWithAuth().post('https://random-acts0519.herokuapp.com/api/login', cred)
@@ -83,6 +84,8 @@ const handleChange = e => {
         [e.target.name]: e.target.value,
     })
 }
+
+props.callBack('#9C9B97');
 return (
  <div style={containerStyle}>
  <form  className="log-in" onSubmit={newLogin} style={formStyle}>
