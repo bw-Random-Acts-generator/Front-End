@@ -24,7 +24,7 @@ const Confirm = (props) => {
 
     useEffect(() => {
         setTimeout(function(){ props.history.push('/login'); }, 3000);
-    })
+    }, [])
     return(
         <div style={containerStyle}>
             <img src={stopwatch} style={timerStyle}/>
