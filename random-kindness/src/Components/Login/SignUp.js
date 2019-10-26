@@ -25,7 +25,7 @@ const SignUp = (props) => {
     }
     const picConStyle = {
         height: '35%',
-        width: '35%',
+        width: '18rem',
         borderRadius: '50%',
         overflow: 'hidden',
         display: 'flex',
@@ -59,7 +59,7 @@ const SignUp = (props) => {
         border: '1px solid #918C89',
         display: 'flex',
         flexDirection: 'column',
-        width: '135%',
+        width: '45vw',
         height: '54rem',
         fontSize: '1.5rem'
     }

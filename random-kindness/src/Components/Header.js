@@ -5,7 +5,8 @@ const Header = (props) => {
     const conStyle = {
         display: 'flex',
         flexDirection: 'column',
-        justifyContent: 'space-around'
+        justifyContent: 'space-around',
+        marginLeft: '25%',
     }
     const fontStyle = {
         fontWeight: '900',
