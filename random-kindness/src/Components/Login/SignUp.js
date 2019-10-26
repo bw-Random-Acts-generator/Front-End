@@ -3,6 +3,7 @@ import { withFormik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './signup.css';
 
 var woman = require('../../img/woman.jpeg');
 
@@ -11,86 +12,7 @@ const SignUp = (props) => {
     const [users, setUsers] = useState([]);
 
     //styles
-    const containerStyle= {
-        backgroundColor: '#F2CFC9',
-        display: 'flex',
-        width: '100%',
-        height: '60rem',
-        
-    }
-
-    const headerStyle = {
-        marginTop: '8%',
-        color: '#918C89'
-    }
-    const picConStyle = {
-        height: '35%',
-        width: '18rem',
-        borderRadius: '50%',
-        overflow: 'hidden',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
-    const picStyle = {
-        height: '100%',
-    }
-    const testimonialStyle = {
-        width: '50%',
-        paddingTop: '5%',
-        paddingBottom: '5%',
-        display: 'flex',
-        flexDirection: 'column',
-        justifyContent: 'space-evenly',
-        alignItems: 'center'
-    }
-    const testimonialTextStyle = {
-        width: '50%',
-        fontSize: '2rem',
-    }
-
-    const fromStyle = {
-        fontSize: '2rem',
-        margin: '0'
-    }
-    const formStyle = {
-        marginTop: '15%',
-        backgroundColor: 'white',
-        border: '1px solid #918C89',
-        display: 'flex',
-        flexDirection: 'column',
-        width: '45vw',
-        height: '54rem',
-        fontSize: '1.5rem'
-    }
-
-    const fieldStyle = {
-        color: '#918C89',
-        width: '85%',
-        margin: '3.5%',
-        padding: '2.5%',
-        fontSize: '1.5rem'
-    }
-
-    const buttonConStyle = {
-        display: 'flex',
-        justifyContent: 'space-between'
-    }
-    const loginReminder = {
-        color: '#918C89',
-        width: '60%',
-        textDecoration: 'none',
-        marginLeft: '3%'
-    }
-    const buttonStyle = {
-        backgroundColor: 'white',
-        fontSize: '1.5rem',
-        color: '#918C89',
-        width: '17.5%',
-        border: '1px solid #918C89',
-        marginRight: '6%',
-        height: '75%'
-    }
+    
 
     //useeffect to setuser to what the form is filled out as
     useEffect(() => {
@@ -104,33 +26,33 @@ const SignUp = (props) => {
     props.callBack('#F2CFC9');
     console.log(props.callBack)
     return (
-        <div style={containerStyle}>
-            <div className='testimonial' style={testimonialStyle}>
-                <div style={picConStyle}>
-                    <img src={woman} style={picStyle}/>
+        <div  className="Container">
+            <div className='testimonial' >
+                <div  className="pic-con">
+                    <img src={woman}  className="woman-pic" alt="Smiling Woman"/>
                 </div>
-                <p style={testimonialTextStyle}>"Random Acts Generator helped remind me that my children are watching everything I do and it doesn't cost anything to be kind!"</p>
+                <p  className="test-text">"Random Acts Generator helped remind me that my children are watching everything I do and it doesn't cost anything to be kind!"</p>
                 <div>
-                    <p style={fromStyle}>Beth Ann</p>
-                    <p style={fromStyle}>New York</p>
+                    <p  className="from-style">Beth Ann</p>
+                    <p  className="from-style">New York</p>
                 </div>
             </div>
             <div className="sign-up-form" >
-                <Form style={formStyle}>
-                    <p style={headerStyle}>Create Account</p>
-                    <Field type="text" name="first" placeholder="FIRST NAME" style={fieldStyle}/>
+                <Form  className="form-style">
+                    <p  className="header">Create Account</p>
+                    <Field className="field-text" type="text" name="first" placeholder="FIRST NAME" />
                     
-                    <Field type="text" name="last" placeholder="LAST NAME" style={fieldStyle}/>
+                    <Field className="field-text" type="text" name="last" placeholder="LAST NAME" />
                     
-                    <Field type="text" name="username" placeholder="EMAIL" style={fieldStyle}/>
+                    <Field className="field-text" type="text" name="username" placeholder="EMAIL" />
                     
-                    <Field type="text" name="password" placeholder="PASSWORD" style={fieldStyle}/>
+                    <Field className="field-text" type="text" name="password" placeholder="PASSWORD" />
                     
-                    <Field type="text" name="confirm" placeholder="CONFIRM PASSWORD" style={fieldStyle} />
+                    <Field className="field-text" type="text" name="confirm" placeholder="CONFIRM PASSWORD"  />
                     
-                    <div style={buttonConStyle}>
-                        <p style={loginReminder}>Already have an account? <Link to= {`/login`} style={loginReminder}>Log in now!</Link></p>
-                        <button type="submit" style={buttonStyle}>Sign Up</button>
+                    <div  className="button-con">
+                        <p  className="reminder">Already have an account? <Link to= {`/login`} >Log in now!</Link></p>
+                        <button className="button" type="submit" >Sign Up</button>
                     </div>
                 </Form>
             </div>
