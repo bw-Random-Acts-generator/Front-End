@@ -19,10 +19,35 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 2rem;
-    
+    margin-top: 5%;
 
 }
 .picStyle {
     width: 100%;
 
+}
+
+.homeBtn {
+    background-color: #EB7F75;
+    width: 32rem;
+    height: 5.5rem;
+    border-radius: 35px;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    text-decoration: none;
+    padding: 1.5%;
+    box-shadow: 1px 4px 4px black;
+}
+
+@media (max-width: 400px) {
+    .picConStyle {
+        margin-top: 20%;
+    }
+    .homeBtn{
+        width: 20rem;
+        height: 4rem;
+        font-size: 1.25rem;
+        padding: 4.5%;
+    }
 }
