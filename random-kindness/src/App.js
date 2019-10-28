@@ -24,6 +24,12 @@ function App() {
     display: 'flex',
     flexDirection: 'column'
   }
+  const headerStyle = {
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'space-evenly',
+    marginBottom: '7.5%',
+  }
   const callBack = (data) => {
     setColor(data);
     console.log(color)
@@ -36,8 +42,10 @@ function App() {
 
   return (
     <div className="App" style={backgroundStyle}>
-      <Route path="/" render={(props) => <Header {...props} color={color}/> }/>
-      <Route path="/" render={(props) => <Sign {...props} log={log}/>}/>
+      <div style={headerStyle}>
+        <Route path="/" render={(props) => <Header {...props} color={color}/> }/>
+        <Route path="/" render={(props) => <Sign {...props} log={log}/>}/>
+      </div>
       <Route exact path="/" render={(props) => <Home {...props} callBack={callBack}/> } />
       <Route path="/acts" component={Acts} />
       <Route path="/acts" render={(props) => <Acts {...props} callBack={callBack}/> } />

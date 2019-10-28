@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Sign = (props) => {
-    const state = {
-        loggedIn: props.log
-    }
+    const [state, setState] = useState({
+        loggedIn: ''
+    })
     const containerStyle = {
-        position: 'relative',
-        left: '71%',
-        top: '-90px',
-        width: '30%',
+        width: '25rem',
         display: 'flex',
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
+        marginTop: '4%'
 
     }
     const buttonStyle = {
@@ -32,6 +30,12 @@ const Sign = (props) => {
         alert('Come back soon!')
         window.location.href = '/login';
     }
+
+    useEffect(() => {
+        setState({loggedIn: props.log})
+    }, [props.log]);
+
+    
     console.log(state.loggedIn)
     const buttons = () => {
         if(state.loggedIn) {

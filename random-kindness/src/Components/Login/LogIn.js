@@ -17,7 +17,6 @@ const containerStyle = {
 
 const formStyle = {
     backgroundColor: '	#FAEFED',
-    marginTop: '7.5%',
     borderRadius: '50%',
     height: '85%',
     width: '50%',
