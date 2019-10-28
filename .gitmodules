@@ -1,0 +1,3 @@
+[submodule "Front-End"]
+    path = bw-Random-Acts-generator
+    url = https://github.com/bw-Random-Acts-generator/Front-End
