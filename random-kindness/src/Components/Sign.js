@@ -12,9 +12,22 @@ const Sign = (props) => {
         marginTop: '4%'
 
     }
-    const buttonStyle = {
+    const buttonStyle1 = {
         backgroundColor: '#9C9B97',
         color: 'white',
+        fontSize: '2rem',
+        padding: '2.5%',
+        borderRadius: '35px',
+        marginTop: '2%',
+        textDecoration: 'none',
+        border: '.5px solid black',
+        boxShadow: '1px 4px 4px black',
+        cursor: 'pointer',
+        fontWeight: '500'
+    }
+    const buttonStyle2 = {
+        backgroundColor: '#eceae0',
+        color: '#9C9B97',
         fontSize: '2rem',
         padding: '2.5%',
         borderRadius: '35px',
@@ -41,15 +54,15 @@ const Sign = (props) => {
         if(state.loggedIn) {
             return(
                 <div style={containerStyle}>
-                    <div onClick={logout} style={buttonStyle}>Log Out</div>
+                    <div onClick={logout} style={buttonStyle1}>Log Out</div>
                 </div>
             )
         }
         else{
             return (
                 <div style={containerStyle}>
-                    <Link to="/signup" style={buttonStyle}>Sign Up</Link>
-                    <Link to="/login" style={buttonStyle}>Sign In</Link>
+                    <Link to="/login" style={buttonStyle1}>Sign In</Link>
+                    <Link to="/signup" style={buttonStyle2}>Sign Up</Link>
                 </div>
             )
         }
