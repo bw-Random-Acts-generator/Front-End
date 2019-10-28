@@ -24,12 +24,7 @@ function App() {
     display: 'flex',
     flexDirection: 'column'
   }
-  const headerStyle = {
-    display: 'flex',
-    width: '100%',
-    justifyContent: 'space-evenly',
-    marginBottom: '7.5%',
-  }
+  
   const callBack = (data) => {
     setColor(data);
     console.log(color)
@@ -42,7 +37,7 @@ function App() {
 
   return (
     <div className="App" style={backgroundStyle}>
-      <div style={headerStyle}>
+      <div className="headerStyle">
         <Route path="/" render={(props) => <Header {...props} color={color}/> }/>
         <Route path="/" render={(props) => <Sign {...props} log={log}/>}/>
       </div>

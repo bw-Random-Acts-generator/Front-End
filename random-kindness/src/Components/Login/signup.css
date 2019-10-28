@@ -82,17 +82,18 @@
 @media(max-width: 400px) {
     .Container{
         flex-direction: column;
-        height: 100rem;
+        height: 70rem;
     }
     .testimonial{
         width: 100%;
-        height: 35%;
+        height: 47%;
     }
     .pic-con{
         width: 50%;
-        height: 35%;
+        height: 45%;
     }
     .test-text{
+        margin-top: 5%;
         font-size: 1.5rem;
         width: 100%;
     }
@@ -105,6 +106,7 @@
     .form-style{
         width: 100%;
         background-color: #F2CFC9;
+        height: 100%;
         border: none;
     }
     .header{
