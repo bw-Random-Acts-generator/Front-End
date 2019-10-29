@@ -56,7 +56,7 @@ return (
        <input
           id="password"
           name="password"
-          type="text"
+          type="password"
           placeholder="PASSWORD"
           value={cred.password}
           onChange={handleChange}

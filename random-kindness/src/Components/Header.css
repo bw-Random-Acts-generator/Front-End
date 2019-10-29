@@ -21,7 +21,11 @@
     margin-right: 2.5%;
     color: black;
 }
-
+@media(max-width: 700px) {
+    .conStyle{
+        margin: 0 auto;
+    }
+}
 @media(max-width: 400px){
     .conStyle{
         flex-direction: row-reverse;

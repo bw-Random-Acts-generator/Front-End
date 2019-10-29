@@ -46,9 +46,9 @@ const SignUp = (props) => {
                     
                     <Field className="field-text" type="text" name="username" placeholder="EMAIL" />
                     
-                    <Field className="field-text" type="text" name="password" placeholder="PASSWORD" />
+                    <Field className="field-text" type="password" name="password" placeholder="PASSWORD" />
                     
-                    <Field className="field-text" type="text" name="confirm" placeholder="CONFIRM PASSWORD"  />
+                    <Field className="field-text" type="password" name="confirm" placeholder="CONFIRM PASSWORD"  />
                     
                     <div  className="button-con">
                         <p  className="reminder">Already have an account? <Link to= {`/login`} >Log in now!</Link></p>
